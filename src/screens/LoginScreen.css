@@ -1,0 +1,177 @@
+.loginScreen{
+  background-color: black;
+  height: 4500px;
+  z-index: 1;
+}
+
+.loginScreen__background{
+  position: relative;
+  width: 100%;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg")
+  center 
+  no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+/* Required in order to make the background image appear*/
+/* The background property creates an overlay that has a gradient effect on top of the background image */
+.loginScreen__gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.8) 100%
+  )
+}
+
+.loginScreen__button{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.loginScreen__logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+}
+
+.loginScreen__body{
+  /* Specifying the position and top will make the body be on top of the background image*/
+  position: absolute; 
+  top: 30%;
+  /* Next three lines make the texts align to the center*/
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  left: 0; 
+  right: 0;
+}
+
+.loginScreen__body > h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+
+.loginScreen__body > h2{
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.loginScreen__body > h3{
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.loginScreen__input{
+  margin: 20px;
+}
+
+.loginScreen__input > form > input{
+  padding: 10px;
+  outline-width: 0; /* removes the blue outline of the input field */
+  height: 30px;
+  width: 30%; /* makes it responsive */
+  border: none;
+  max-width: 600px; /* ensures that it does not get too big */
+}
+
+.loginScreen__getStarted {
+  padding: 15.8px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loginScreen__items{
+  position: absolute;
+  margin-top: 250px;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -999;
+}
+
+.loginScreen__itemA{
+  display: grid;
+  grid-template-areas: 'col2 col2 col1 col1';
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 1000px;
+}
+
+.loginScreen__itemB{
+  display: grid;
+  grid-template-areas: 'col1 col1 col2 col2';
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 1000px;
+}
+
+.loginScreen__itemC{
+  display: grid;
+  grid-template-areas: 'col2 col2 col1 col1';
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 1000px;
+}
+
+.item--description{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  grid-area: col1;
+}
+
+.item--description>h1{
+  margin-bottom: 20px;
+}
+
+.item--description>p{
+  font-size: 15px;
+}
+
+.item--img{
+  object-fit: contain;
+  width: 500px;
+  grid-area: col2;
+}
+
+.greySpan{
+  background-color: #222222;
+  opacity: 0.7;
+  height: 7px;
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}

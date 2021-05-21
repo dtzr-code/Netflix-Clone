@@ -1,0 +1,105 @@
+.manageProfileScreen {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+}
+
+.manageProfileScreen__details{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  padding-top: 250px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.manageProfileScreen__details > h2 {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.manageProfileScreen__profiles {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 10px;
+}
+
+.manageProfileScreen__profile{
+  color: #727272;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+.profile--icon{
+  filter: brightness(50%);
+  object-fit: contain;
+  width: 90px;
+  border-radius: 5%;
+}
+
+.profile--icon:hover{
+  border: 0.8px solid white;
+  transition: all 1s ease;
+
+}
+
+.edit--icon{
+  position: absolute;
+  object-fit:contain;
+  height: 25px;
+  filter: invert(100%) brightness(600%);
+  padding-bottom: 15px;
+}
+
+.manageProfileScreen__profile > p {
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.manageProfileScreen__profile:hover{
+  color: white;
+  transition: all 1s ease-out;
+}
+
+.manageProfileScreen__button{
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manageProfile_button{
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 22px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.manageProfile_button:hover{
+  background-color: rgba(204, 0, 0, 0.733);
+  color: white;
+}
+
+@media screen and (max-width: 1440px) {
+  .profile--icon{
+    width: 140px;
+  }
+}

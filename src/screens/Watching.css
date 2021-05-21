@@ -1,0 +1,93 @@
+.WatchScreen {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+}
+
+.watchScreen__details{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  padding-top: 250px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.watchScreen__details > h2 {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.watchScreen__profiles {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 10px;
+}
+
+.watchScreen__profile{
+  color: #727272;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.watchScreen__profile > img{
+  object-fit: contain;
+  width: 90px;
+  border-radius: 5%;
+}
+
+.watchScreen__profile > img:hover{
+  border: 0.8px solid white;
+  transition: all 1s ease;
+
+}
+
+.watchScreen__profile > p {
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.watchScreen__profile:hover{
+  color: white;
+  transition: all 1s ease-out;
+}
+
+.watchScreen__manage{
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.watchScreen__manage_button{
+  background-color: transparent;
+  color: #727272;
+  border: 1px solid #727272;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 6px 22px;
+  cursor: pointer;
+}
+
+.watchScreen__manage_button:hover{
+  filter:brightness(200%);
+}
+
+@media screen and (max-width: 1440px) {
+  .watchScreen__profile>img{
+    width: 140px;
+  }
+}
