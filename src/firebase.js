@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 
+//need a config
 const firebaseConfig = {
   apiKey: "AIzaSyCYj-nO_6jG-SudmEClm30fT6d6haqQPCM",
   authDomain: "netflix2-clone-e95d8.firebaseapp.com",
@@ -11,8 +12,7 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-//firestore() is a real-time database
-//allow us to keep track of what the user subscription is
+//firestore() is a real-time database which allow us to keep track of what the user subscription is
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
