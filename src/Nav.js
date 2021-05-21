@@ -25,9 +25,6 @@ function Nav() {
     setSettings(!IsSettings)
   }
 
-  /* Creating animation when scroll, navbar disappears */
-  const [show, handleShow] = useState(false);
-
   /* To toggle the subscribe page */
   const [isProfile, setProfile] = useState(true)
   const toggleSubscribe = () => {
@@ -43,6 +40,8 @@ function Nav() {
   /* use to programmatically push the next page into the history stack*/
   const history = useHistory();
 
+  /* Creating animation when scroll, navbar disappears */
+  const [show, handleShow] = useState(false);
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
       handleShow(true);
@@ -58,8 +57,9 @@ function Nav() {
 
   useEffect(() => {
     window.addEventListener("scroll", transitionNavBar);
-    return () => window.removeEventListener("scroll", transitionNavBar);
-  },[]) //code only runs when the component mounts
+    return () => {
+      window.removeEventListener("scroll", transitionNavBar);
+  }},[]) //code only runs when the component mounts
 
   return (
     <div className = {`nav ${show && "nav__black"}`}> {/* Only add the nav__black class if the show variable is true  */}

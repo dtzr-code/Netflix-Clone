@@ -6,27 +6,32 @@ import home2 from '../image/home2.png'
 import home3 from '../image/home3.png'
 import Footer from '../Footer'
 import Accordion from '../Accordion'
+import { useHistory } from 'react-router'
 
 
 function LoginScreen() {
 
   const [signIn, setSignIn] = useState(false) 
+  const history = useHistory();
 
   return (
       <div className="loginScreen">
         <div className= "loginScreen__background">
-          <img
-            className="loginScreen__logo"
-            src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt=""
-          />
-          <button 
-            onClick={() => setSignIn(true)}                 
-            className="loginScreen__button"
-            >
-            Sign In
-          </button>
-
-          <div className="loginScreen__gradient"/>
+          <div className="loginScreen__gradient">
+            <div className="loginScreen__navbar">
+              <img
+                className="loginScreen__logo"
+                src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" 
+                alt=""
+              />
+              <button 
+                onClick={() => setSignIn(true)}                 
+                className="loginScreen__button"
+                >
+                Sign In
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="loginScreen__body">
@@ -84,7 +89,21 @@ function LoginScreen() {
               <Accordion/>
 
               {/* Get Started Component */}
-              
+              <div className="get__started">
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <div className = "loginScreen__input_2">
+                  <form>
+                    <input 
+                      type='email' 
+                      placeholder="Email Address"
+                    />
+                    <button onClick={() => setSignIn(true)} className="loginScreen__getStarted_2"> 
+                      GET STARTED 
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <span className="greySpan"/>
               {/* Footer Component */}
               <Footer/>
             </>

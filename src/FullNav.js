@@ -42,28 +42,31 @@ function FullNav() {
     }
   }
 
+  
   useEffect(() => {
     window.addEventListener("scroll", transitionNavBar);
-    return () => window.removeEventListener("scroll", transitionNavBar);
-  },[transitionNavBar]) //code only runs when the component mounts
+    return () => {
+      window.removeEventListener("scroll", transitionNavBar);
+  }},[transitionNavBar]) //code only runs when the component mounts
 
   /* To check if subscription collection exists */
   /* Only when subscripotion collection exists, then allow to render the movies page when clicking netflix logo */
   const [subscribed, setSubscribed] = useState()
   useEffect(()=> {
-    db.collection("customers")
-    .doc(user.uid)
-    .collection('subscriptions')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach( async subscription => {
-        if(subscription.exists){
-          setSubscribed(true)
-        }else{
-          setSubscribed(false)
-        };
-      });
-    });
+    let info = async() => db.collection("customers")
+                            .doc(user.uid)
+                            .collection('subscriptions')
+                            .get()
+                            .then(querySnapshot => {
+                              querySnapshot.forEach( async subscription => {
+                                if(subscription.exists){
+                                  setSubscribed(true)
+                                }else{
+                                  setSubscribed(false)
+                                };
+                              });
+                              info(); //To unscribe 
+                            });
   }, [user.uid])
   
   return (

@@ -9,7 +9,6 @@ import { login, logout, selectUser } from './features/userSlice';
 import ProfileScreen from './screens/ProfileScreen';
 import Watching from './screens/Watching';
 import ManageProfiles from './screens/ManageProfiles';
-import PlanScreen from './screens/PlanScreen';
 
 function App() {
 
@@ -40,22 +39,9 @@ function App() {
     return unsubscribe
   }, [dispatch, auth])
 
+  /* For checking if user has subscribed to a plan */
+  /* Only when user has subscribed to a plan, then render the movies */
   const [plan, setPlan] = useState()
-  // useEffect(()=> {
-  //   db.collection("customers")
-  //   .doc(user.uid)
-  //   .collection('subscriptions')
-  //   .get()
-  //   .then(querySnapshot => {
-  //     querySnapshot.forEach( async subscription => {
-  //       if(subscription.exists){
-  //         setSubscribed(true)
-  //       }else{
-  //         setSubscribed(false)
-  //       };
-  //     });
-  //   });
-  // }, [user.uid])
 
   const currentUser = auth.currentUser
   if (currentUser){

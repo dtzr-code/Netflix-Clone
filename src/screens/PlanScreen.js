@@ -14,46 +14,48 @@ function PlanScreen() {
   const [subscription, setSubscription] = useState(null)
 
   useEffect(()=> {
-    db.collection("customers")
-    .doc(user.uid)
-    .collection('subscriptions')
-    .get()
-    .then(querySnapshot => {
+    const info = async() => db.collection("customers")
+                            .doc(user.uid)
+                            .collection('subscriptions')
+                            .get()
+                            .then(querySnapshot => {
 
-      /* querySnapshot represents the result of a query */
-      /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
-      querySnapshot.forEach( async subscription => {
-        setSubscription({
-          role: subscription.data().role,
-          current_period_end: subscription.data().current_period_end.seconds,
-          current_period_start: subscription.data().current_period_start.seconds,
-        });
-      });
-    });
-  }, [user.uid])
+                              /* querySnapshot represents the result of a query */
+                              /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
+                              querySnapshot.forEach( async subscription => {
+                                setSubscription({
+                                  role: subscription.data().role,
+                                  current_period_end: subscription.data().current_period_end.seconds,
+                                  current_period_start: subscription.data().current_period_start.seconds,
+                                });
+                              });
+                              info()
+                            });
+  }, [])
 
   /* fetch the plans from the database */
   /* The documents can be accessed as an array via the docs property or enumerated using the forEach method.  */
   /* https://console.firebase.google.com/project/netflix2-clone-e95d8/firestore/data~2Fproducts~2Fprod_JT3hRI7rwmgJfh */
   /* The 'products' and 'active' attribute is displayed in the link above */
   useEffect(() => {
-    db.collection('products')
-      .where('active', '==', true)
-      .get()
-      .then((querySnapshot) => {
-        const products = {};
-        querySnapshot.forEach(async (productDoc) => {
-          products[productDoc.id] = productDoc.data();
-          const priceSnap = await productDoc.ref.collection('prices').get();
-          priceSnap.docs.forEach((price) => {
-            products[productDoc.id].prices = {
-              priceId: price.id,
-              priceData: price.data(),
-            };
-          });
-        });
-        setProducts(products);
-      });
+    const info = async() => db.collection('products')
+                              .where('active', '==', true)
+                              .get()
+                              .then((querySnapshot) => {
+                                const products = {};
+                                querySnapshot.forEach(async (productDoc) => {
+                                  products[productDoc.id] = productDoc.data();
+                                  const priceSnap = await productDoc.ref.collection('prices').get();
+                                  priceSnap.docs.forEach((price) => {
+                                    products[productDoc.id].prices = {
+                                      priceId: price.id,
+                                      priceData: price.data(),
+                                    };
+                                  });
+                                });
+                                setProducts(products);
+                                info(); //To unscribe 
+                              });
   },[]);
 
   console.log("The products are: ", products) /* Returns an object */

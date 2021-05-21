@@ -11,26 +11,26 @@ function ProfileScreen() {
   /* to use the email attribute */
   const user = useSelector(selectUser)
 
+  // To get the user subscription plan name
   const [current, setCurrent] = useState("NIL")
-
   useEffect(()=> {
-    db.collection("customers")
-    .doc(user.uid)
-    .collection('subscriptions')
-    .get()
-    .then(querySnapshot => {
+    const info = async() => db.collection("customers")
+                              .doc(user.uid)
+                              .collection('subscriptions')
+                              .get()
+                              .then(querySnapshot => {
 
-      /* querySnapshot represents the result of a query */
-      /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
-      querySnapshot.forEach( async subscription => {
-        setCurrent({
-          role: subscription.data().role
-        });
-      });
-    });
+                                /* querySnapshot represents the result of a query */
+                                /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
+                                querySnapshot.forEach( async subscription => {
+                                  setCurrent({
+                                    role: subscription.data().role
+                                  });
+                                });
+                                info(); //To unscribe 
+                              });
   }, [user.uid])
 
-  console.log(current.role)
 
   return (
     <div className='profileScreen'>

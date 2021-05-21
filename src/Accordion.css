@@ -11,7 +11,7 @@
 }
 
 .question--container{
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .accordion{
@@ -20,11 +20,11 @@
   align-items: center;
   width: 100%;
   color: white;
-  background-color: #222222;
+  background-color: #303030;
   border: none;
   outline: none;
   max-height: 100px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-size: 25px;
   font-weight: 400;
   text-align: left;
@@ -38,12 +38,13 @@
 
 .panel{
   width: 100%;
-  background-color: #222222;
+  background-color: #303030;
 }
 
 .panel > p{ 
   font-weight: normal;
   font-size: 21px;
   text-align: left;
-  padding: 10px 20px;
+  padding: 25px;
+  white-space: pre-line; /* creates the newline break --> need to have \n in the AccordionData.js */
 }

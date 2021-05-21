@@ -42,11 +42,12 @@
 
 .navbar__selection{
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   padding-left: 45px;
   padding-top: 5px;
   height: 25px;
+  margin-left: 30px;
 }
 
 .navbar__dropdown{
