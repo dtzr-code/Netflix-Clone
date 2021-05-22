@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Row.css"
-import axios from './axios'
+import axios from '../axios'
 import YouTube from 'react-youtube'; /* npm install --save youtube-api */
-import {API_KEY} from './Requests'
+import {API_KEY} from '../Requests'
 
 function Row({title, fetchUrl, isLargeRow = false}) {
 

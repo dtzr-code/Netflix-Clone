@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './LoginScreen.css'
 import home1 from '../image/home1.png'
 import home2 from '../image/home2.png'
