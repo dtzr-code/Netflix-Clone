@@ -3,6 +3,7 @@ import './Banner.css'
 import axios from "./axios"
 import requests from "./Requests"
 
+
 function Banner() {
 
   const [movie, setMovie] = useState([]);
@@ -22,8 +23,6 @@ function Banner() {
     fetchData();
   }, [])
 
-  console.log(movie);
-
   function truncate(string, n){
     //for cutting off the movie description and ends it with a ...
     //we need to use string with a ? as there may not always be a string being passed, some may be undefined
@@ -31,12 +30,14 @@ function Banner() {
   }
 
   return (
-    <header className="banner" style={{
+    <header 
+      className="banner" 
       //doing an inline styling
+      style={{
       backgroundSize: "cover",
       backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-      backgroundPosition: "center center"
-    }}>
+      backgroundPosition: "center center"}}
+      >
       <div className="banner__contents">
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.orginal_name}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import { selectUser } from '../features/userSlice'
 import db, { auth } from '../firebase'
 import FullNav from '../FullNav'
@@ -8,28 +9,34 @@ import "./ProfileScreen.css"
 
 function ProfileScreen() {
 
+  const history = useHistory();
+  
   /* to use the email attribute */
   const user = useSelector(selectUser)
 
   // To get the user subscription plan name
   const [current, setCurrent] = useState("NIL")
   useEffect(()=> {
-    const info = async() => db.collection("customers")
-                              .doc(user.uid)
-                              .collection('subscriptions')
-                              .get()
-                              .then(querySnapshot => {
+      db.collection("customers")
+        .doc(user.uid)
+        .collection('subscriptions')
+        .get()
+        .then(querySnapshot => {
 
-                                /* querySnapshot represents the result of a query */
-                                /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
-                                querySnapshot.forEach( async subscription => {
-                                  setCurrent({
-                                    role: subscription.data().role
-                                  });
-                                });
-                                info(); //To unscribe 
-                              });
+          /* querySnapshot represents the result of a query */
+          /* loop through forEach subscriptions and retrieve the role attribute, current period start and end */
+          querySnapshot.forEach( async subscription => {
+            setCurrent({
+              role: subscription.data().role
+            });
+          });
+        });
   }, [user.uid])
+
+  const signout = () => {
+    auth.signOut();
+    history.push('./');
+  }
 
 
   return (
@@ -53,7 +60,7 @@ function ProfileScreen() {
               {/* Upon clicking to sign out, it will go to App.js and triggers off the listerner because the authentications tate changed */}
               {/* Now there is no userAuth, so it will dispatch the  logout action so now user is now null and retunrs back to the login screen*/}
               <button 
-                onClick={()=> auth.signOut()}
+                onClick={signout}
                 className="profileScreen__signOut"
               >Sign Out</button>
             </div>

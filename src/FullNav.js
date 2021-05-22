@@ -53,20 +53,19 @@ function FullNav() {
   /* Only when subscripotion collection exists, then allow to render the movies page when clicking netflix logo */
   const [subscribed, setSubscribed] = useState()
   useEffect(()=> {
-    let info = async() => db.collection("customers")
-                            .doc(user.uid)
-                            .collection('subscriptions')
-                            .get()
-                            .then(querySnapshot => {
-                              querySnapshot.forEach( async subscription => {
-                                if(subscription.exists){
-                                  setSubscribed(true)
-                                }else{
-                                  setSubscribed(false)
-                                };
-                              });
-                              info(); //To unscribe 
-                            });
+      db.collection("customers")
+        .doc(user.uid)
+        .collection('subscriptions')
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach( async subscription => {
+            if(subscription.exists){
+              setSubscribed(true)
+            }else{
+              setSubscribed(false)
+            };
+          });
+        });
   }, [user.uid])
   
   return (

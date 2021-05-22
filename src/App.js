@@ -9,6 +9,8 @@ import { login, logout, selectUser } from './features/userSlice';
 import ProfileScreen from './screens/ProfileScreen';
 import Watching from './screens/Watching';
 import ManageProfiles from './screens/ManageProfiles';
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 function App() {
 
@@ -63,7 +65,17 @@ function App() {
       <Router>
         {/* If there is no user, render the login screen else render the app components */}
         {!user ? (
-          <LoginScreen/>
+          <Switch>
+            <Route exact path='/'>
+              <LoginScreen/>
+            </Route>
+            <Route exact path='/signin'>
+              <SignInScreen/>
+            </Route>
+            <Route exact path='/signup'>
+              <SignUpScreen/>
+            </Route>
+          </Switch>
         ) : (!plan ? (
           <ProfileScreen/>
         ) : (
