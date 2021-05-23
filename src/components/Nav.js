@@ -5,28 +5,38 @@ import './Nav.css'
 
 function Nav() {
 
+  const history = useHistory();
+
   /* For the browse button */
   const [isOpen, setOpen] = useState(false)
+
+  /* Creating animation when scroll, navbar disappears */
+  const [show, handleShow] = useState(false);
+
+  /* For the search button */
+  const [IsSearch, setSearch] = useState(false)
+
+  /* For the search input */
+  const [searchTerm, setSearchTerm] = useState("")
+
+  /* For the settings */
+  const [IsSettings, setSettings] = useState(false)
+
+  /* To toggle the subscribe page */
+  const [isProfile, setProfile] = useState(true)
 
   const toggle= () => {
     setOpen(!isOpen)
   }
 
-  /* For the search button */
-  const [IsSearch, setSearch] = useState(false)
-
   const toggle_search = () => {
     setSearch(!IsSearch)
   }
 
-  /* For the settings */
-  const [IsSettings, setSettings] = useState(false)
   const toggle_setting = () => {
     setSettings(!IsSettings)
   }
-
-  /* To toggle the subscribe page */
-  const [isProfile, setProfile] = useState(true)
+  
   const toggleSubscribe = () => {
     if (isProfile){
       setProfile(!isProfile)
@@ -35,13 +45,7 @@ function Nav() {
       history.push('./profile')
     }
   }
-
-  /* to create the /profile page */
-  /* use to programmatically push the next page into the history stack*/
-  const history = useHistory();
-
-  /* Creating animation when scroll, navbar disappears */
-  const [show, handleShow] = useState(false);
+ 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
       handleShow(true);
@@ -59,7 +63,8 @@ function Nav() {
     window.addEventListener("scroll", transitionNavBar);
     return () => {
       window.removeEventListener("scroll", transitionNavBar);
-  }},[]) //code only runs when the component mounts
+    }
+  },[]) //code only runs when the component mounts
 
   return (
     <div className = {`nav ${show && "nav__black"}`}> {/* Only add the nav__black class if the show variable is true  */}
@@ -102,7 +107,7 @@ function Nav() {
         <div className="search__bar">
           <img 
             onClick = {toggle_search}
-            src = "http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png"
+            src="https://o.remove.bg/downloads/993f4d1f-c085-4489-9e60-e17724db3692/search--icon-removebg-preview.png"
             alt=""
           />
           <input 
@@ -118,7 +123,7 @@ function Nav() {
         <div className="dropdown">
             <img
               onClick={toggleSubscribe}
-              onMouseOver={toggle_setting}
+              onMouseEnter={toggle_setting}
               className="nav__avatar" 
               src="https://occ-0-3069-58.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABcGt38lP6INwT06gZ5Nn1fi8zT7r-ad0GfCsiLhB6zibZZCCCq_0EdrPvh5_-xs-pNl0Bilexan-d2mjkdyUGLbcEgB7.png?r=8aa"
               alt=""

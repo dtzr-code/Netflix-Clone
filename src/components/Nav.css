@@ -131,6 +131,7 @@
   height: 30px; 
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .search__bar > input {
@@ -146,11 +147,11 @@
 
 .search__bar > img{
   padding-right: 10px;
-  background-color: transparent;
   object-fit: contain;
   width: 18px;
-  filter: invert(100%) brightness(100%);
-  cursor: pointer
+  filter: brightness(100%);
+  cursor: pointer;
+  z-index: 999;
 }
 
 .dropdown{

@@ -4,7 +4,7 @@ import axios from '../axios'
 import YouTube from 'react-youtube'; /* npm install --save youtube-api */
 import {API_KEY} from '../Requests'
 
-function Row({title, fetchUrl, isLargeRow = false}) {
+function Row({ title, fetchUrl, isLargeRow = false}) {
 
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState('');
