@@ -1,0 +1,43 @@
+.searchrow__container{
+    height: 920px;
+}
+
+.searchrow {
+    color: white;
+    margin-left: 20px;
+    padding-top: 110px;
+}
+
+.searchrow__posters{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+/* removes the scrolllbar */
+.searchrow__posters::-webkit-scrollbar{
+    display: none;
+}
+
+.searchrow__poster{
+    max-height: 100px; 
+    object-fit: contain;
+    margin-right: 10px;
+    transition: transform 450ms;
+}
+
+.searchrow__poster:hover{
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.searchrow__posterLarge{
+    max-height: 250px;
+}
+
+.searchrow__poster:hover{
+    transform: scale(1.09);
+    opacity: 1;
+}
+  
