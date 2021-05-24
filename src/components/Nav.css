@@ -149,7 +149,7 @@
   padding-right: 10px;
   object-fit: contain;
   width: 18px;
-  filter: brightness(100%);
+  filter: invert(100%) brightness(100%);
   cursor: pointer;
   z-index: 999;
 }

@@ -32,14 +32,13 @@ function Row({ title, fetchUrl, isLargeRow = false}) {
 
   /* When the user clicked on the picture */
   const handleClick = async (movie) => {
-    {/* if the video is already open, close it by setting the setTrailerUrl to empty */}
+    /* if the video is already open, close it by setting the setTrailerUrl to empty */
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
       let trailerurl = await axios.get(
         `/movie/${movie.id}/videos?api_key=${API_KEY}`
       );
-      console.log(trailerurl);
       setTrailerUrl(trailerurl.data.results[0]?.key);  /* To get the value of the id key*/
     }
   };
@@ -65,7 +64,7 @@ function Row({ title, fetchUrl, isLargeRow = false}) {
               isLargeRow ? movie.poster_path : movie.backdrop_path}`
             } 
             alt={movie.name}
-          />
+            />
           )
         ))}
       </div>

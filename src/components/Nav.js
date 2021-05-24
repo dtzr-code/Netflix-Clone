@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { auth } from '../firebase'
 import './Nav.css'
+import searchIcon from '../image/search--icon.png'
 
-function Nav() {
+function Nav({value, handleChange}) {
 
   const history = useHistory();
 
@@ -15,9 +16,6 @@ function Nav() {
 
   /* For the search button */
   const [IsSearch, setSearch] = useState(false)
-
-  /* For the search input */
-  const [searchTerm, setSearchTerm] = useState("")
 
   /* For the settings */
   const [IsSettings, setSettings] = useState(false)
@@ -107,7 +105,7 @@ function Nav() {
         <div className="search__bar">
           <img 
             onClick = {toggle_search}
-            src="https://o.remove.bg/downloads/993f4d1f-c085-4489-9e60-e17724db3692/search--icon-removebg-preview.png"
+            src={searchIcon}
             alt=""
           />
           <input 
@@ -115,7 +113,10 @@ function Nav() {
               display: IsSearch ? 'inline-block' : 'none',
               transform: IsSearch ? "scaleX(1)" : "none",
             }}
-            placeholder="Titles, people, genres">
+            placeholder="Titles, people, genres"
+            value={value}
+            onChange={handleChange}
+          >
           </input>
         </div>
 
