@@ -1,10 +1,11 @@
 .loginScreen__background{
   position: relative;
   width: 100%;
+  height: 700px;
   background: url("https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg")
   center 
   no-repeat;
-  background-size: contain;
+  background-size: cover;
   z-index: 1;
 }
 
@@ -45,45 +46,45 @@
 
 .loginScreen__logo {
   left: 0;
-  width: 180px;
+  width: 160px;
   object-fit: contain;
   padding-left: 20px;
   margin-left: 20px;
 }
 
-.loginScreen__body{
-  /* Specifying the position and top will make the body be on top of the background image*/
-  position: absolute; 
-  top: 30%;
-  /* Next three lines make the texts align to the center*/
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  z-index: 1;
+.loginScreen__desc{
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 10px;
-  left: 0; 
-  right: 0;
+  padding-top: 100px;
+  margin: auto;
+  text-align: center;
+  width: 100%;
 }
 
-.loginScreen__body > h1 {
-  font-size: 3.125rem;
+.loginScreen__desc > h1 {
+  font-size: 2.6rem;
   margin-bottom: 20px;
 }
 
-.loginScreen__body > h2{
+.loginScreen__desc > h2{
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 30px;
 }
 
-.loginScreen__body > h3{
+.loginScreen__desc > h3{
   font-size: 1.3rem;
   font-weight: 400;
+  margin-bottom: 10px;
 }
-
-.loginScreen__input{
-  margin: 20px;
+.loginScreen__input > form{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .loginScreen__input > form > input{
@@ -93,6 +94,8 @@
   width: 30%; /* makes it responsive */
   border: none;
   max-width: 600px; /* ensures that it does not get too big */
+  min-width: 400px;
+  width: 100%;
 }
 
 .loginScreen__getStarted {
@@ -103,6 +106,23 @@
   border: none;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.loginScreen__body{
+  /* Specifying the position and top will make the body be on top of the background image*/
+  position: absolute; 
+  /* Next three lines make the texts align to the center*/
+  top: 390px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  padding: 10px;
+  left: 0; 
+  right: 0;
 }
 
 .loginScreen__items{
@@ -133,6 +153,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  padding-left: 40px;
   width: 1200px;
 }
 
@@ -145,6 +166,14 @@
   width: 1200px;
 }
 
+.item--description{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  grid-area: col1;
+  text-align: left;
+  width: 600px;
+}
 .item--description{
   display: flex;
   flex-direction: column;
@@ -168,7 +197,6 @@
   width: 600px;
   grid-area: col2;
 }
-
 .greySpan{
   background-color: #222222;
   opacity: 0.7;

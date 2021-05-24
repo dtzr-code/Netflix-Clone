@@ -29,26 +29,28 @@ function LoginScreen() {
                 Sign In
               </button>
             </div>
-          </div>
+          
+            <div className="loginScreen__desc">
+              <h1>Unlimited films, TV Programmes and more.</h1>
+              <h2>Watch anywhere. Cancel at any time.</h2>
+              <h3>Ready to watch? Enter your email to create or restart your membership</h3>
+
+              <div className = "loginScreen__input">
+                <form>
+                  <input 
+                    type='email' 
+                    placeholder="Email Address"
+                  />
+                  <button onClick={() => history.push('/signin')} className="loginScreen__getStarted"> 
+                    GET STARTED 
+                  </button>
+                </form>
+              </div>
+            </div>
+            </div>
         </div>
 
         <div className="loginScreen__body">
-          <h1>Unlimited films, TV Programmes and more.</h1>
-          <h2>Watch anywhere. Cancel at any time.</h2>
-          <h3>Ready to watch? Enter your email to create or restart your membership</h3>
-
-          <div className = "loginScreen__input">
-            <form>
-              <input 
-                type='email' 
-                placeholder="Email Address"
-              />
-              <button onClick={() => history.push('/signin')} className="loginScreen__getStarted"> 
-                GET STARTED 
-              </button>
-            </form>
-          </div>
-
           <div className="loginScreen__items">
             <span className="greySpan"/>
             <div className="loginScreen__itemA">
