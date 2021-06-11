@@ -11,11 +11,7 @@ function HomeScreen() {
 
   /* for the search results */
   const [searchTerm, setSearchTerm] = useState("")
-  const [searchActive, setIsActive] = useState(false)
-  if (searchTerm > 0){
-    setIsActive(!searchActive)
-  }
-
+  
   const search_query= `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}`
 
   const handleChange = e => {

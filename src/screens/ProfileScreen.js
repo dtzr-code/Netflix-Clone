@@ -35,7 +35,7 @@ function ProfileScreen() {
 
   const signout = () => {
     auth.signOut();
-    history.push('./');
+    history.push('/');
   }
 
 
