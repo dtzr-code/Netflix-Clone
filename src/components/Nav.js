@@ -64,6 +64,12 @@ function Nav({value, handleChange}) {
     }
   },[]) //code only runs when the component mounts
 
+  const signout = () => {
+    auth.signOut()
+    history.push('/')
+  }
+
+
   return (
     <div className = {`nav ${show && "nav__black"}`}> {/* Only add the nav__black class if the show variable is true  */}
       <div className="nav__contents">
@@ -171,7 +177,7 @@ function Nav({value, handleChange}) {
               <div className="account__settings">
                 <h3>Account</h3>
                 <h3>Help Centre</h3>
-                <h3 onClick={()=> auth.signOut()}>Sign out of Netflix</h3>
+                <h3 onClick={signout}>Sign out of Netflix</h3>
               </div>
             </div>
           </div>
