@@ -17,8 +17,6 @@
   display: flex;
 }
 
-
-
 .profileScreen__info > img {
   height: 100px;
 }
@@ -68,5 +66,37 @@
     padding-top: 150px;
     width: 70%;
     min-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+
+  .profileScreen__body{
+    max-width: 2000px;
+  }
+  
+  .profileScreen__body > h1 {
+    font-size: 80px;
+  }
+  
+  .profileScreen__info{
+    width: 1300px;
+  }
+  
+  .profileScreen__info > img {
+    height: 300px;
+  }
+
+  .profileScreen__details > h2{
+    font-size: 30px;
+  }
+
+  .profileScreen__plans > h3{
+    font-size: 25px;
+  }
+
+  .profileScreen__signOut {
+    font-size: 2.5rem;
+    
   }
 }

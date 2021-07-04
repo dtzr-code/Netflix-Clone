@@ -6,6 +6,7 @@
 }
 
 .accordion__container > h1{
+  color: white;
   margin-bottom: 40px;
   font-size: 40px;
 }
@@ -23,7 +24,7 @@
   background-color: #303030;
   border: none;
   outline: none;
-  max-height: 100px;
+  max-height: 140px;
   margin-bottom: 3px;
   font-size: 25px;
   font-weight: 400;
@@ -46,5 +47,37 @@
   font-size: 21px;
   text-align: left;
   padding: 25px;
+  color: white;
   white-space: pre-line; /* creates the newline break --> need to have \n in the AccordionData.js */
 }
+
+@media only screen and (min-width: 1500px){
+  .accordion__container{
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;  
+    margin: 20px auto;
+  }
+
+  .accordion__container > h1{
+    color: white;
+    margin-bottom: 40px;
+    font-size: 75px;
+  }
+
+  .accordion{
+    width: 100%;
+    height: 140px;
+    margin-bottom: 3px;
+    font-size: 45px;
+    font-weight: 500;
+    padding: 40px;
+    cursor: pointer;
+  }
+
+  .panel > p{ 
+    font-size: 40px;
+    padding: 40px;
+  }
+}
+

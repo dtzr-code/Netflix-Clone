@@ -32,3 +32,23 @@
   font-size: 14px;
   font-weight: 600;
 }
+
+@media only screen and (min-width: 1500px) {
+  
+  .planScreen__plan > button{
+    font-size: 1.5rem;
+  }
+
+  .planScreen>p{
+    font-size: 20px;
+  }
+
+  .planScreen__info > h5{
+    font-size: 25px;
+  }
+  
+  .planScreen__info > h6{
+    font-size: 20px;
+  }
+  
+}

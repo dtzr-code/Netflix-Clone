@@ -12,8 +12,13 @@ export const FooterWrapper = styled.div `
   flex-direction: column;
   text-align: left;
   margin-left: 250px;
-`
 
+  @media only screen and (min-width: 1500px){
+    margin-left: 0;
+    justify-content: center;
+
+  }
+`
 export const LinkWrapper = styled.div `
   display: flex;
   flex-direction: column;
@@ -24,6 +29,10 @@ export const FooterContact = styled.p `
   font-size: 18px;
   font-weight: normal;
   padding: 20px;
+
+  @media only screen and (min-width: 1500px){
+    font-size: 36px;
+  }
 `
 
 export const FooterLink = styled(LinkS) `
@@ -35,6 +44,10 @@ export const FooterLink = styled(LinkS) `
   &:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  @media only screen and (min-width: 1500px){
+    font-size: 36px;
   }
 `
 
@@ -61,6 +74,10 @@ export const ColumnLink = styled(LinkS) `
     text-decoration: underline;
     cursor: pointer;
   }
+
+  @media only screen and (min-width: 1500px){
+    font-size: 25px;
+  }
 `
 
 export const DropDownWrapper = styled.div`
@@ -77,6 +94,10 @@ export const DropDownSelect = styled.select `
   outline: white;
   color: white;
   font-size: 1rem;
+
+  @media only screen and (min-width: 1500px){
+    font-size: 25px;
+  }
 `
 
 export const DropDownOption = styled.option `
@@ -89,4 +110,8 @@ export const FooterTag = styled.p `
   margin-bottom: 5px;
   margin-left: 20px;
   padding-left: 20px;
+
+  @media only screen and (min-width: 1500px){
+    font-size: 20px;
+  }
 `

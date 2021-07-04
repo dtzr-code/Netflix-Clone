@@ -55,3 +55,44 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media only screen and (min-width: 1500px) {
+
+  .signupScreen {
+    max-width: 550px;
+    padding: 70px;
+    margin-top: 200px;
+  }
+
+  .signupScreen > form > h1 {
+    font-size: 60px;
+  }
+  
+  
+  .signupScreen > form > input{
+    height: 70px;
+  }
+
+  .signupScreen > form > input[type="text"] {
+    font-size: 25px;
+  }
+
+  .signupScreen > form > input[type="Email"] {
+    font-size: 25px;
+  }
+  .signupScreen > form > input[type="Password"] {
+    font-size: 25px;
+  }
+
+  .signupScreen > form > input::placeholder {
+    font-size: 25px;
+  }
+  
+  .signupScreen > form > button{
+    font-size: 2rem;
+  }
+  
+  .signupScreen > form > h4{
+    font-size: 30px;
+  }
+}

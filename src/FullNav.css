@@ -36,3 +36,20 @@
   width: 30px;
   height: 30px;
 }
+
+@media screen and (min-width: 1500px) {
+  .Fullnav{
+    height: 100px;
+  }
+
+  .Fullnav__logo{
+    width: 250px;
+  }
+
+  .Fullnav__avatar{
+    width: 100px;
+    height: 110px;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}

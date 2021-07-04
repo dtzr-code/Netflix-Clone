@@ -1,3 +1,7 @@
+.nav__logo{
+  width: 150px;
+}
+
 .manageProfileScreen {
   background-color: rgb(20, 20, 20);
   height: 100vh;
@@ -21,6 +25,7 @@
   justify-content: center;
   font-size: 32px;
   font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .manageProfileScreen__profiles {
@@ -46,7 +51,7 @@
 .profile--icon{
   filter: brightness(50%);
   object-fit: contain;
-  width: 90px;
+  width: 200px;
   border-radius: 5%;
 }
 
@@ -59,7 +64,7 @@
 .edit--icon{
   position: absolute;
   object-fit:contain;
-  height: 25px;
+  height: 40px;
   filter: invert(100%) brightness(600%);
   padding-bottom: 15px;
 }
@@ -101,5 +106,28 @@
 @media screen and (max-width: 1440px) {
   .profile--icon{
     width: 140px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .profile--icon{
+    width: 280px;
+  }
+
+  .manageProfileScreen__details > h2 {
+    font-size: 65px;
+  }
+
+  .edit--icon{
+    height: 80px;
+  }
+  
+  .manageProfileScreen__profile > p {
+    font-size: 2rem;
+  }
+
+  .manageProfile_button{
+    font-size: 30px;
+    font-weight: 400;
   }
 }
