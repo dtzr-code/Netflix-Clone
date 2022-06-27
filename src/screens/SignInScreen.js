@@ -12,6 +12,7 @@ function SignInScreen() {
   const history = useHistory();
 
   const signIn = (e) => {
+    console.log(emailRef)
     e.preventDefault();
 
     auth.signInWithEmailAndPassword(

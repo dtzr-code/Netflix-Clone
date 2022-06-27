@@ -1,15 +1,16 @@
-.loginScreen{
+.loginScreen {
   position: absolute;
   width: 100%;
   overflow-x: hidden;
 }
 
-.loginScreen__background{
+
+
+.loginScreen__background {
   position: relative;
   width: 100%;
   background: url("https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg")
-  center 
-  no-repeat;
+    center no-repeat;
   background-size: cover;
   z-index: 1;
 }
@@ -20,15 +21,15 @@
   width: 100%;
   z-index: 1;
   height: 100vh;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
     to top,
-    rgba(0,0,0,0.8) 0,
-    rgba(0,0,0,0) 60%,
-    rgba(0,0,0,0.8) 100%
-  )
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
-.loginScreen__navbar{
+.loginScreen__navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +37,7 @@
   max-width: 100%;
 }
 
-.loginScreen__button{
+.loginScreen__button {
   height: 40px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -57,9 +58,9 @@
   margin-left: 20px;
 }
 
-.loginScreen__body{
+.loginScreen__body {
   /* Specifying the position and top will make the body be on top of the background image*/
-  position: absolute; 
+  position: absolute;
   top: 30%;
   /* Next three lines make the texts align to the center*/
   margin-left: auto;
@@ -68,7 +69,7 @@
   z-index: 1;
   color: white;
   padding: 10px;
-  left: 0; 
+  left: 0;
   right: 0;
 }
 
@@ -77,22 +78,22 @@
   margin-bottom: 20px;
 }
 
-.loginScreen__body > h2{
+.loginScreen__body > h2 {
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 30px;
 }
 
-.loginScreen__body > h3{
+.loginScreen__body > h3 {
   font-size: 1.3rem;
   font-weight: 400;
 }
 
-.loginScreen__input{
+.loginScreen__input {
   margin: 20px;
 }
 
-.loginScreen__input > form > input{
+.loginScreen__input > form > input {
   padding: 10px;
   outline-width: 0; /* removes the blue outline of the input field */
   height: 30px;
@@ -111,7 +112,7 @@
   cursor: pointer;
 }
 
-.loginScreen__items{
+.loginScreen__items {
   color: white;
   position: absolute;
   width: 100vw;
@@ -124,34 +125,34 @@
   z-index: -999;
 }
 
-.loginScreen__itemA{
+.loginScreen__itemA {
   display: grid;
-  grid-template-areas: 'col2 col2 col1 col1';
+  grid-template-areas: "col2 col2 col1 col1";
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 1200px;
 }
 
-.loginScreen__itemB{
+.loginScreen__itemB {
   display: grid;
-  grid-template-areas: 'col1 col1 col2 col2';
+  grid-template-areas: "col1 col1 col2 col2";
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 1200px;
 }
 
-.loginScreen__itemC{
+.loginScreen__itemC {
   display: grid;
-  grid-template-areas: 'col2 col2 col1 col1';
+  grid-template-areas: "col2 col2 col1 col1";
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 1200px;
 }
 
-.item--description{
+.item--description {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -160,22 +161,22 @@
   width: 600px;
 }
 
-.item--description>h1{
+.item--description > h1 {
   margin-bottom: 20px;
   font-size: 50px;
 }
 
-.item--description>p{
+.item--description > p {
   font-size: 25px;
 }
 
-.item--img{
+.item--img {
   object-fit: contain;
   width: 600px;
   grid-area: col2;
 }
 
-.greySpan-top{
+.greySpan-top {
   background-color: #222222;
   opacity: 0.7;
   height: 7px;
@@ -184,7 +185,7 @@
   padding: 0 20px;
 }
 
-.greySpan{
+.greySpan {
   background-color: #222222;
   opacity: 0.7;
   height: 7px;
@@ -195,24 +196,24 @@
   padding: 0 20px;
 }
 
-.get__started{
+.get__started {
   width: 100%;
   margin-top: 60px;
 }
 
-.get__started > p{
+.get__started > p {
   font-weight: 400;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.lognScreen__input__2{
+.lognScreen__input__2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.loginScreen__input_2 > form > input{
+.loginScreen__input_2 > form > input {
   padding: 10px 10px 7px 10px;
   outline-width: 0; /* removes the blue outline of the input field */
   height: 45px;
@@ -221,7 +222,7 @@
   max-width: 500px; /* ensures that it does not get too big */
 }
 
-.get__started{
+.get__started {
   text-align: center;
   color: white;
 }
@@ -237,19 +238,18 @@
   margin-bottom: 15px;
 }
 
-.loginScreen__getStarted_2:hover{
-  filter:brightness(110%);
+.loginScreen__getStarted_2:hover {
+  filter: brightness(110%);
 }
 
 /* Desktop size*/
-@media only screen and (min-width: 1500px){
-
-  .loginScreen__logo{
+@media only screen and (min-width: 1500px) {
+  .loginScreen__logo {
     width: 300px;
     margin-top: 100px;
   }
 
-  .loginScreen__button{
+  .loginScreen__button {
     width: 250px;
     height: 80px;
     font-size: 30px;
@@ -271,7 +271,7 @@
     margin-bottom: 20px;
   }
 
-  .loginScreen__input{
+  .loginScreen__input {
     width: 3000px;
     text-align: center;
   }
@@ -282,54 +282,54 @@
     margin-left: 300px;
   }
 
-  .loginScreen__input > form > input{
+  .loginScreen__input > form > input {
     margin-left: 0;
     height: 50px;
   }
 
-  .loginScreen__getStarted{
+  .loginScreen__getStarted {
     height: 69px;
   }
 
-  .loginScreen__itemA{
+  .loginScreen__itemA {
     width: 2000px;
   }
 
-  .loginScreen__itemB{
+  .loginScreen__itemB {
     width: 2000px;
   }
 
-  .loginScreen__itemB{
+  .loginScreen__itemB {
     width: 2000px;
   }
 
-  .item--description{
+  .item--description {
     width: 800px;
     margin-left: 120px;
   }
 
-  .item--description > h1{
+  .item--description > h1 {
     font-size: 4.5rem;
   }
 
-  .item--description > p{
+  .item--description > p {
     font-size: 2rem;
   }
 
-  .item--img{
+  .item--img {
     width: 900px;
     padding: 40px;
   }
 
-  .get__started{
+  .get__started {
     height: 200px;
   }
 
-  .get__started>p{
+  .get__started > p {
     font-size: 40px;
   }
 
-  .loginScreen__input_2{
+  .loginScreen__input_2 {
     width: 3000px;
     text-align: center;
   }
@@ -340,12 +340,11 @@
     margin-left: 300px;
   }
 
-  .loginScreen__input_2 > form > input{
+  .loginScreen__input_2 > form > input {
     margin-left: 0;
     height: 50px;
   }
-  .loginScreen__getStarted_2{
+  .loginScreen__getStarted_2 {
     height: 69px;
   }
-  
 }

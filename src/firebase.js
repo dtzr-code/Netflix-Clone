@@ -1,13 +1,13 @@
-import firebase from 'firebase'
+import firebase from "firebase";
 
 //need a config
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "netflix2-clone-e95d8.firebaseapp.com",
-  projectId: "netflix2-clone-e95d8",
-  storageBucket: "netflix2-clone-e95d8.appspot.com",
-  messagingSenderId: "373441766595",
-  appId: "1:373441766595:web:7839bae3756a7734856e76"
+  projectId: process.envREACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
@@ -17,5 +17,5 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
 //we can only have one default export but many explicit export
-export {auth};
-export default db; 
+export { auth };
+export default db;
